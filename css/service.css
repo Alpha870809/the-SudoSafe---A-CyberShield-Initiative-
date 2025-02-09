@@ -1,0 +1,440 @@
+/* Services Page Specific Styles */
+
+/* Hero Section Styles */
+.training-hero {
+    position: relative;
+    min-height: 70vh;
+    background: linear-gradient(135deg, var(--dark-black) 0%, #1a1a1a 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem;
+}
+
+/* Animated Background Elements */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(201, 39, 39, 0.1) 0%,
+        transparent 50%,
+        rgba(201, 39, 39, 0.1) 100%
+    );
+    animation: bgPulse 10s ease-in-out infinite;
+}
+
+.cyber-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(201, 39, 39, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 39, 39, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform-origin: center;
+    transform: perspective(1000px) rotateX(60deg) scale(2);
+    animation: gridMove 20s linear infinite;
+}
+
+.matrix-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.hero-orb {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, 
+        rgba(201, 39, 39, 0.2) 0%, 
+        transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: orbFloat 8s infinite ease-in-out;
+}
+
+.hero-orb:nth-child(2) {
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    animation-delay: -4s;
+}
+
+/* Hero Content Styles */
+.training-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201, 39, 39, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(201, 39, 39, 0.2);
+}
+
+.badge i {
+    color: var(--primary-red);
+}
+
+.training-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    color: var(--pure-white);
+}
+
+.training-hero p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+}
+
+/* Service Stats */
+.service-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--pure-white);
+    opacity: 0.8;
+}
+
+/* Services Grid Styles */
+.services {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, var(--dark-black) 0%, #1a1a1a 100%);
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.services-header h1 {
+    font-size: 2.5rem;
+    color: var(--pure-white);
+    margin-bottom: 1rem;
+}
+
+.services-header p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Service Card Styles */
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(201, 39, 39, 0.1);
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--primary-red);
+    transition: height 0.3s ease;
+}
+
+.service-card:hover::before {
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(201, 39, 39, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.service-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-red);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--pure-white);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Feature List Styles */
+.feature-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.feature-list li i {
+    color: var(--primary-red);
+    font-size: 0.9rem;
+}
+
+/* Learn More Button */
+.learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--primary-red);
+    color: var(--pure-white);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background: var(--primary-red);
+    transform: translateY(-2px);
+}
+
+/* Animation Keyframes */
+@keyframes bgPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+@keyframes gridMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+@keyframes orbFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-20px, 20px);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .service-stats {
+        gap: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .training-hero {
+        padding: 4rem 1rem;
+    }
+    
+    .service-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .services {
+        padding: 4rem 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .badge {
+        font-size: 0.9rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .services-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Zero Trust Section */
+.zero-trust-service {
+    padding: 6rem 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+}
+
+.zero-trust-container-service {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.zero-trust-content-service h2 {
+    font-family: var(--heading-font);
+    margin-top: 1rem;
+    font-size: 36px;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, var(--primary-red), #ff3333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+.rotating-image {
+    width: 100%;
+    max-width: 500px;
+    }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Framework Features */
+.framework-features {
+    display: grid;
+    gap: 2rem;
+}
+
+.feature {
+    background: rgba(201, 39, 39, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateX(10px);
+    background: rgba(201, 39, 39, 0.15);
+}
+
+.feature h3 {
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Stats Badge */
+.stats-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(201, 39, 39, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin: 2rem 0;
+}
+
+.stats-badge .number {
+    font-size: 2rem;
+    color: var(--primary-red);
+    font-weight: bold;
+}
+
+/* AI/ML Section */
+.ai-ml-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.9));
+    padding: 6rem 2rem;
+}
+
+.ai-ml-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}

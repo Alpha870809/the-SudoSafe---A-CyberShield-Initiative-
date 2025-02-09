@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Shield Base -->
+ <path d="M400 50 L600 150 L600 400 L400 550 L200 400 L200 150 Z" fill="none" stroke="#ff0000" stroke-width="4">
+   <animate attributeName="stroke-dasharray" from="2000 2000" to="0 2000" dur="3s" repeatCount="indefinite"/>
+ </path>
+ 
+ <!-- Digital Circuit Lines -->
+ <g stroke="#ff0000" stroke-width="2">
+   <path d="M300 200 Q400 250 500 200" fill="none">
+     <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="2s" repeatCount="indefinite"/>
+   </path>
+   <path d="M300 300 Q400 350 500 300" fill="none">
+     <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="2s" repeatCount="indefinite"/>
+   </path>
+ </g>
+
+ <!-- Lock Icon -->
+ <g transform="translate(350 250)">
+   <rect x="0" y="20" width="100" height="80" rx="10" fill="none" stroke="#ffffff" stroke-width="4"/>
+   <path d="M20 20 L20 0 Q50 -20 80 0 L80 20" fill="none" stroke="#ffffff" stroke-width="4">
+     <animate attributeName="d" 
+              values="M20 20 L20 0 Q50 -20 80 0 L80 20;
+                      M20 20 L20 0 Q50 -30 80 0 L80 20;
+                      M20 20 L20 0 Q50 -20 80 0 L80 20"
+              dur="2s" repeatCount="indefinite"/>
+   </path>
+ </g>
+
+ <!-- Scanning Effect -->
+ <rect x="200" y="150" width="400" height="250" fill="url(#scanGradient)">
+   <animate attributeName="y" from="150" to="400" dur="3s" repeatCount="indefinite"/>
+ </rect>
+ 
+ <defs>
+   <linearGradient id="scanGradient" x1="0" y1="0" x2="0" y2="1">
+     <stop offset="0%" stop-color="#ff000000"/>
+     <stop offset="50%" stop-color="#ff000044"/>
+     <stop offset="100%" stop-color="#ff000000"/>
+   </linearGradient>
+ </defs>
+</svg>

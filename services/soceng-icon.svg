@@ -1,0 +1,26 @@
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Social Engineering Icon with Continuous Animation -->
+  <g id="soceng-icon" filter="url(#glow)">
+    <circle cx="100" cy="80" r="30" fill="none" stroke="#ff0000" stroke-width="2">
+      <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="28;30;28" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M70 120 Q100 150 130 120" fill="none" stroke="#ff0000" stroke-width="2">
+      <animate attributeName="d" values="M70 120 Q100 150 130 120;M70 115 Q100 145 130 115;M70 120 Q100 150 130 120" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <g>
+      <circle cx="85" cy="75" r="5" fill="#ff0000">
+        <animate attributeName="r" values="4;5;4" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="115" cy="75" r="5" fill="#ff0000">
+        <animate attributeName="r" values="4;5;4" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg>
+
