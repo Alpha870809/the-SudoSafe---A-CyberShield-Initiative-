@@ -139,60 +139,55 @@
       </section>
 
       <script>
-        (function () {
-          // The Discord webhook URL is obfuscated by splitting its Base64-encoded string.
-          var part1 = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM0Mzk5NDg2Njg0OTU1MDM5Ny9M";
-          var part2 = "bkhIeEhIbVBERkUxNnV1aXJTaFh5SmtjNzM0MUxFVEVOMHhkczU3cWdEcUlHNzFZQm9ZWWRLay12bEdjTnB5TzZK";
-          var webhookUrl = atob(part1) + atob(part2);
-          
-          var form = document.getElementById("contactForm");
-          form.addEventListener("submit", async function (event) {
+        document.getElementById('contactForm').addEventListener('submit', async function(event) {
             event.preventDefault();
-      
-            // Gather form data
-            var firstName = document.getElementById("firstName").value;
-            var lastName  = document.getElementById("lastName").value;
-            var email     = document.getElementById("email").value;
-            var country   = document.getElementById("country").value;
-            var company   = document.getElementById("company").value;
-            var jobTitle  = document.getElementById("jobTitle").value;
-            var message   = document.getElementById("message").value;
-      
-            // Create the payload with embed fields
-            var payload = {
-              embeds: [{
-                title: "New Contact Form Submission",
-                fields: [
-                  { name: "First Name", value: firstName, inline: true },
-                  { name: "Last Name", value: lastName, inline: true },
-                  { name: "Email", value: email, inline: true },
-                  { name: "Country", value: country, inline: true },
-                  { name: "Company", value: company, inline: true },
-                  { name: "Job Title", value: jobTitle, inline: true },
-                  { name: "Message", value: message, inline: false }
-                ]
-              }]
+        
+            const firstName = document.getElementById('firstName').value;
+            const lastName  = document.getElementById('lastName').value;
+            const email     = document.getElementById('email').value;
+            const country   = document.getElementById('country').value;
+            const company   = document.getElementById('company').value;
+            const jobTitle  = document.getElementById('jobTitle').value;
+            const message   = document.getElementById('message').value;
+        
+            const webhookUrl = "https://discord.com/api/webhooks/1338087018944532601/FmDZg6CqX8mUTR3lTiTW4PD2ZCmIFdgtc9lWDoQXLbghxJy7nOXYmfp5vyqbxzXSw9OD";
+        
+            const payload = {
+                embeds: [{
+                    title: "New Contact Form Submission",
+                    fields: [
+                        { name: "First Name", value: firstName },
+                        { name: "Last Name",  value: lastName },
+                        { name: "Email",      value: email },
+                        { name: "Country",    value: country },
+                        { name: "Company",    value: company },
+                        { name: "Job Title",  value: jobTitle },
+                        { name: "Message",    value: message }
+                    ],
+                    color: 0x00FF00
+                }]
             };
-      
+        
             try {
-              const response = await fetch(webhookUrl, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-              });
-      
-              if (response.ok) {
-                alert("Thank you for contacting us! We'll be in touch soon.");
-                form.reset();
-              } else {
-                throw new Error("Network response was not ok.");
-              }
+                const response = await fetch(webhookUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+        
+                if (response.ok) {
+                    alert("Thank you for contacting us!");
+                    event.target.reset();
+                } else {
+                    alert("There was an error sending your message. Please try again later.");
+                }
             } catch (error) {
-              alert("There was an error sending your message. Please try again later.");
+                console.error("Error sending to Discord:", error);
+                alert("There was an error sending your message. Please try again later.");
             }
-          });
-        })();
-      </script>
+        });
+        </script>
+        
 
 <script src="js/scripts.js"></script>
 
