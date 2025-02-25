@@ -1,0 +1,80 @@
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: rgba(255, 0, 0, 0.5); /* Red with 50% transparency */
+    top: 0;
+    bottom: -100px; /* Extend further down */
+    left: 50%;
+    margin-left: -2px;
+}
+.timeline-block {
+    position: relative;
+    background: #333; /* Dark background for blocks */
+    border: 2px solid red; /* Changed to red */
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%; /* Increased width */
+    min-height: 130px; /* Increased height */
+    margin: 30px 0; /* Increased margin for spacing */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.timeline-block:nth-child(odd) {
+    left: -10%; /* Increased left margin */
+}
+
+.timeline-block:nth-child(even) {
+    left: 60%;
+}
+.timeline-circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgb(230, 49, 13); /* Changed to red */
+    color: white; /* Text color for circle */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    top: 50%; /* Center vertically relative to the block */
+    left: 50%; /* Center horizontally relative to the block */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    z-index: 1; /* Ensure circles are above the timeline line */
+}
+.timeline-circle:nth-child(1) {
+    top: 5%; /* Position of the first circle */
+}
+.timeline-circle:nth-child(2) {
+    top: 20%; /* Position of the second circle */
+}
+.timeline-circle:nth-child(3) {
+    top: 35%; /* Position of the third circle */
+}
+.timeline-circle:nth-child(4) {
+    top: 50%; /* Position of the fourth circle */
+}
+.timeline-circle:nth-child(5) {
+    top: 65%; /* Position of the fifth circle */
+}
+.timeline-circle:nth-child(6) {
+    top: 80%; /* Position of the fifth circle */
+}
+.timeline-circle:nth-child(7) {
+    top: 95%; /* Position of the fifth circle */
+}
+h2 {
+    margin: 0;
+    font-size: 20px;
+    color: red; /* Changed to red */
+}
+p {
+    margin-top: 10px;
+    color: white; /* Text color set to white */
+}

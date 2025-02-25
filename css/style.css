@@ -27,18 +27,30 @@ body {
     background-color: var(--primary-red);
     font-family: var(--body-font);
     color: var(--pure-white);
-    text-align: center;
     padding: 10px;
     position: relative;
     z-index: 100;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Align items to the edges */
     align-items: center;
 }
 
 .announcement a {
     color: var(--pure-white);
     text-decoration: underline;
+}
+
+/* New class for the email text */
+.announcement .mail{
+    margin-left: auto; /* Push the email text to the right */
+    padding-left: 20px; /* Add some spacing between the announcement and email */
+    
+}
+
+.mail a{
+    font-size: 14px !important; /* Match the size of the training page */
+    color: var(--pure-white) !important;
+    text-decoration: none !important;
 }
 
 .close-notice {
@@ -832,6 +844,7 @@ nav {
     transition: width 0.5s ease;
     border-radius: 2px;
 }
+
 
 /* Responsive Design */
 @media (max-width: 1200px) {
