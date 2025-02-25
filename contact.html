@@ -87,106 +87,112 @@
 
     <section class="contact-form-section">
         <div class="contact-container">
-            <div class="form-container">
-                <h2 class="section-title">Get In Touch</h2>
-                <form id="contactForm" class="animated-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" id="firstName" name="firstName" required>
-                            <label for="firstName">First name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="lastName" name="lastName" required>
-                            <label for="lastName">Last name</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Email address</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="country" name="country" required>
-                        <label for="country">Country</label>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" id="company" name="company" required>
-                            <label for="company">Company</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="jobTitle" name="jobTitle" required>
-                            <label for="jobTitle">Job Title</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" required></textarea>
-                        <label for="message">Your message</label>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <span>Submit</span>
-                    </button>
-                </form>
-            </div>
+          <div class="form-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form id="contactForm" class="animated-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="firstName" name="firstName" required>
+                  <label for="firstName">First name</label>
+                  <div class="form-line"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="lastName" name="lastName" required>
+                  <label for="lastName">Last name</label>
+                  <div class="form-line"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email address</label>
+                <div class="form-line"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" id="country" name="country" required>
+                <label for="country">Country</label>
+                <div class="form-line"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="company" name="company" required>
+                  <label for="company">Company</label>
+                  <div class="form-line"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="jobTitle" name="jobTitle" required>
+                  <label for="jobTitle">Job Title</label>
+                  <div class="form-line"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" required></textarea>
+                <label for="message">Your message</label>
+                <div class="form-line"></div>
+              </div>
+              <button type="submit" class="submit-btn">
+                <span>Submit</span>
+                <div class="btn-line"></div>
+              </button>
+            </form>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <script>
-        async function sendToDiscord(event) {
+      <script>
+        (function () {
+          // The Discord webhook URL is obfuscated by splitting its Base64-encoded string.
+          var part1 = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM0Mzk5NDg2Njg0OTU1MDM5Ny9M";
+          var part2 = "bkhIeEhIbVBERkUxNnV1aXJTaFh5SmtjNzM0MUxFVEVOMHhkczU3cWdEcUlHNzFZQm9ZWWRLay12bEdjTnB5TzZK";
+          var webhookUrl = atob(part1) + atob(part2);
+          
+          var form = document.getElementById("contactForm");
+          form.addEventListener("submit", async function (event) {
             event.preventDefault();
-
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const country = document.getElementById('country').value;
-            const company = document.getElementById('company').value;
-            const jobTitle = document.getElementById('jobTitle').value;
-            const message = document.getElementById('message').value;
-
-            // Encoded webhook URL (Base64)
-            const encodedWebhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM0Mzk5NDg2Njg0OTU1MDM5Ny9MckhIWGhNQkRCRTE2dXVpclNoWHlLdGM3MzQxTEVUQ04weGR6NTdxZ0RxSUc3MVlCb1lZZEtqVmx1TDVjZ05weU82Sg==";
-
-            // Decode Base64
-            function decodeBase64(str) {
-                return atob(str);
-            }
-
-            // Get decoded webhook URL
-            const webhookUrl = decodeBase64(encodedWebhook);
-
+      
+            // Gather form data
+            var firstName = document.getElementById("firstName").value;
+            var lastName  = document.getElementById("lastName").value;
+            var email     = document.getElementById("email").value;
+            var country   = document.getElementById("country").value;
+            var company   = document.getElementById("company").value;
+            var jobTitle  = document.getElementById("jobTitle").value;
+            var message   = document.getElementById("message").value;
+      
+            // Create the payload with embed fields
+            var payload = {
+              embeds: [{
+                title: "New Contact Form Submission",
+                fields: [
+                  { name: "First Name", value: firstName, inline: true },
+                  { name: "Last Name", value: lastName, inline: true },
+                  { name: "Email", value: email, inline: true },
+                  { name: "Country", value: country, inline: true },
+                  { name: "Company", value: company, inline: true },
+                  { name: "Job Title", value: jobTitle, inline: true },
+                  { name: "Message", value: message, inline: false }
+                ]
+              }]
+            };
+      
             try {
-                const response = await fetch(webhookUrl, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        embeds: [{
-                            title: "New Contact Form Submission",
-                            fields: [
-                                { name: "First Name", value: firstName },
-                                { name: "Last Name", value: lastName },
-                                { name: "Email", value: email },
-                                { name: "Country", value: country },
-                                { name: "Company", value: company },
-                                { name: "Job Title", value: jobTitle },
-                                { name: "Message", value: message }
-                            ]
-                        }]
-                    })
-                });
-
-                if (response.ok) {
-                    alert("Thank you! Your message has been sent.");
-                    event.target.reset();
-                } else {
-                    throw new Error('Submission failed');
-                }
+              const response = await fetch(webhookUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+              });
+      
+              if (response.ok) {
+                alert("Thank you for contacting us! We'll be in touch soon.");
+                form.reset();
+              } else {
+                throw new Error("Network response was not ok.");
+              }
             } catch (error) {
-                alert("Error sending message. Please try again later.");
+              alert("There was an error sending your message. Please try again later.");
             }
-        }
-
-        // Attach the function to the form
-        document.getElementById('contactForm').addEventListener('submit', sendToDiscord);
-    </script>
+          });
+        })();
+      </script>
 
 
 <footer class="footer">
