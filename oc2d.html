@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Sudosafe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <style>
+    /* Center text for key sections */
+    .announcement,
+    .footer-content,
+    .footer-bottom {
+      text-align: left;
+      padding-left: 4rem;
+    }
+    
+    /* Syllabus section styling */
+    .syllabus-section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .syllabus-container {
+      animation: fadeIn 1.5s ease-in-out;
+      padding: 1rem;
+    }
+    
+    /* Flex layout for syllabus content and UPI image */
+    .syllabus-flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    
+    .syllabus-content {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .syllabus-image-container {
+      flex: 0 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    /* Remove numbering from ordered list */
+    .syllabus-content ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    .syllabus-content ul li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .syllabus-content ul li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #FF4500;
+    }
+    
+    /* UPI image styling */
+    .upi-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Registration button styling */
+    .register-btn {
+      display: inline-block;
+      background-color: #FF4500;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 250px;
+    }
+    
+    .register-btn:hover {
+      background-color: #E03E00;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+    }
+    
+    /* Pricing info styling */
+    .pricing-info {
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    
+    .pricing-info del {
+      color: #888;
+    }
+    
+    .pricing-info strong {
+      color: #FF4500;
+      font-size: 1.4rem;
+    }
+    
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Slide-down animation for the announcement banner */
+    .announcement {
+      animation: slideDown 1s ease-out;
+    }
+    
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Header text style with subtle text shadow */
+    .syllabus-content h1,
+    .syllabus-content h2 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Navigation link hover effect */
+    .nav-link {
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: #FF4500; /* Accent color */
+    }
+    
+    /* Button hover scale effect */
+    .breach-btn {
+      transition: transform 0.3s ease;
+    }
+    
+    .breach-btn:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .announcement,
+      .footer-content,
+      .footer-bottom {
+        padding-left: 1rem;
+        text-align: center;
+      }
+      
+      .syllabus-section {
+        padding: 1rem;
+      }
+      
+      .syllabus-flex-container {
+        flex-direction: column;
+      }
+      
+      .syllabus-image-container {
+        margin: 0 auto;
+      }
+      
+      .syllabus-content h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      
+      .pricing-info {
+        text-align: center;
+      }
+      
+      .register-btn {
+        display: block;
+        margin: 1rem auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement" id="announcement">
+    sudosafe - Join us for Secure Future - Be strong Together.
+    <div class="mail">
+      <a href="mailto:inquiry@sudosafe.com">inquiry@sudosafe.com</a>
+    </div>
+  </div>
+  <nav>
+    <div class="logo">
+      <img src="images/image-removebg-preview.png" alt="Drone Logo">
+      Sudosafe
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link">Services</a>
+        <div class="dropdown-content">
+          <a href="utd.html">Unified Threat Defense Platform & MDR</a>
+          <a href="wast.html">Web Application Security Testing</a>
+          <a href="#">Penetration Testing</a>
+          <a href="#">Elite OT/ICS Cybersecurity Assessment</a>
+          <a href="#">Compliance & Audit</a>
+          <a href="#">Security Consulting</a>
+        </div>
+      </div>
+      <a href="training.html" class="nav-link">Training</a>
+      <div class="nav-item dropdown">
+        <a href="Product.html" class="nav-link">Product</a>
+      </div>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html"><button class="breach-btn">Let's Talk</button></a>
+    </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  
+  <!-- Syllabus Section -->
+  <section class="syllabus-section">
+    <div class="syllabus-container">
+      <div class="syllabus-flex-container">
+        <div class="syllabus-content">
+          <u><h1>Offensive Cyber Capability Development (0C2D)</h1></u>
+          <ul>
+            <li>Intro to Cyber-Physical Security & Cyber Warfare Doctrine</li>
+            <li>Intro to Assembly Language (MASM)</li>
+            <li>System Architecture & Introduction to the Windows OS (NT)</li>
+            <li>WinAPIs & PE File Format & Registers (Windows Internals)</li>
+            <li>Memory Management in NT</li>
+            <li>Intro to ImmunityDebugger, IDAPRO, GHIDRA, GDB (ALL VARIANTS), x32/64dbg, Binary Ninja</li>
+            <li>Deep Dive - Malware Internals & Common Tactics</li>
+            <li>Linux V/S BsD V/S NT ENVs for Offensive</li>
+            <li>Stack</li>
+            <li>Saved Return Pointer overwrites</li>
+            <li>Structured Exception Handling</li>
+            <li>Bad Characters</li>
+            <li>Egg hunters</li>
+            <li>C1: Case Study: Analysis of discord & IRC Botnet</li>
+            <li>Intro to Foothold</li>
+            <li>Intro to Evasion and deception</li>
+            <li>In-depth study of AV/EDR/XDR Detection mechanisms</li>
+            <li>Payload placement, Encryption & obfuscation</li>
+            <li>APC injection (remote V/S Local)</li>
+            <li>TLS & Non TLS Callbacks</li>
+            <li>Mapping Injection (remote V/S Local)</li>
+            <li>PPID spoofing & Hell's Gate (ALL IMPLEMENTATIONS)</li>
+            <li>Parsing PE headers</li>
+            <li>Anti-debugging methods & Anti-virtualization methods</li>
+            <li>Custom WinAPI functions & Binary metadata modification</li>
+            <li>Bring your own file extension</li>
+            <li>Bring your own protocol handler</li>
+            <li>Evasion with file bloating</li>
+            <li>AMSI, AMSI Bypass, AMSI Patchless bypass using H/W BPs</li>
+            <li>Building a DRM-equipped malware</li>
+            <li>DLL sideloading for EDR evasion</li>
+            <li>Bring your own vulnerable driver (BYOVD)</li>
+            <li>Reflective DLL Injection & PeFluctuation</li>
+            <li>Malware directory placement</li>
+            <li>Ransomware in Python/GO/RUST</li>
+            <li>Module Stomping, DEP and HEAP exploitation</li>
+            <li>Closing Remarks and Resources</li>
+            <li>C2: Interesting Examples/Case Studies of modern malwares</li>
+          </ul>
+        </div>
+
+        
+        
+        <div class="syllabus-image-container" style="padding-top: 20cap;">
+          <img src="images/UPI.jpeg" alt="UPI Payment" class="upi-image">
+          <a href="https://forms.gle/eJmnFfR5TKPziUsPA" class="register-btn breach-btn" style="background-color: #E03E00;">Register Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <center style="padding-bottom: 5rem;"><p class="pricing-info" style="font-size: 5cap;">Original Price: <del>₹5000</del> | Launch Price: <strong style="font-size: 2cap;">₹1499</strong> (70% OFF!)</p></center>
+
+  
+  <footer class="footer">
+    <div class="footer-diagonal"></div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="images/image-removebg-preview.png" alt="Sudosafe Logo">
+          <span>Sudosafe</span>
+        </div>
+        <p class="footer-description">Join us for a Secure Future - Be strong Together.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Red Teaming</a></li>
+          <li><a href="wast.html">Web Security</a></li>
+          <li><a href="Compliance&Audit.html">Compliance & Audit</a></li>
+          <li><a href="Penetration-Testing.html">Penetration Testing</a></li>
+          <li><a href="Security-Consulting.html">Security Consulting</a></li>  
+          <li><a href="OT-Cybersecurity-Assesment.html">Elite OT/ICS Cybersecurity Assessment</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul class="contact-info">
+          <li>
+            <div class="mail">
+              <a href="mailto:inquiry@sudosafe.com"><i class="contact-icon">📧</i> inquiry@sudosafe.com</a>
+            </div>
+          </li>
+          <li><i class="contact-icon">📱</i> 8050455176</li>
+          <li><i class="contact-icon">📍</i> Halasuru, Bangalore, Karnataka 560008</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sudosafe. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Responsive navigation menu toggle
+    document.addEventListener("DOMContentLoaded", function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+      
+      // Add animation class to syllabus
+      const syllabus = document.querySelector('.syllabus-container');
+      syllabus.classList.add('loaded');
+    });
+  </script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
